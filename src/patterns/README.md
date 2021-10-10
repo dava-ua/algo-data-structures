@@ -29,3 +29,4 @@ Longest Common Substring
 ![img.png](assets/bfs.png)
 ![img.png](assets/dfs.png)
 ![img.png](assets/knapsack.png)
+![img.png](assets/inPlaceReversalLinkedList.png)
