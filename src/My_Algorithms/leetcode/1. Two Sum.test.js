@@ -23,8 +23,7 @@ test('twoSum', () => {
   expect(twoSum([3, 3], 6)).toStrictEqual([1, 0]);
 });
 
-// most voted solution
-
+/* most voted solution */
 const twoSum1 = function (nums, target) {
   const map = new Map();
 
