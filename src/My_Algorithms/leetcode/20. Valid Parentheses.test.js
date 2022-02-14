@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/valid-parentheses/
 
 /**
- * @param {string} s
+ * @param {string} str
  * @return {boolean}
  */
 const isValid = function (str) {
