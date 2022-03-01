@@ -1,9 +1,8 @@
-import './App.css';
-import { Cell } from './components/Cell';
+import { Cell } from './Cell';
 import { useState } from 'react';
 import TurnContext from './TurnContext';
 
-function App() {
+function TicTacToe() {
 
   const [matrix, setMatrix] = useState([]);
   const [status, setStatus] = useState('make turn');
@@ -57,11 +56,11 @@ function App() {
         <Cell onCellMark={onCellMarkedCallback} index={0}></Cell>
         <Cell onCellMark={onCellMarkedCallback} index={1}></Cell>
         <Cell onCellMark={onCellMarkedCallback} index={2}></Cell>
-        <br/>
+        <br style={{clear: 'left'}} />
         <Cell onCellMark={onCellMarkedCallback} index={3}></Cell>
         <Cell onCellMark={onCellMarkedCallback} index={4}></Cell>
         <Cell onCellMark={onCellMarkedCallback} index={5}></Cell>
-        <br/>
+        <br style={{clear: 'left'}} />
         <Cell onCellMark={onCellMarkedCallback} index={6}></Cell>
         <Cell onCellMark={onCellMarkedCallback} index={7}></Cell>
         <Cell onCellMark={onCellMarkedCallback} index={8}></Cell>
@@ -71,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default TicTacToe;
