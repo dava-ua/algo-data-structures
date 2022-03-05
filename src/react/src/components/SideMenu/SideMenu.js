@@ -44,23 +44,16 @@ const SideMenu = () => {
       </div>
       <Divider />
       <List>
-        <ListItem button key="companies">
+        <ListItem button key="tic-tac-toe">
           <NavLink to="/tic-tac-toe" className="menuItem">
             <ListItemText primary="Tic-tac-toe" />
           </NavLink>
         </ListItem>
         {/*<Divider />*/}
-        <ListItem button key="users">
-          <ListItemText primary="Users" />
-        </ListItem>
-        <ListItem button key="inbox">
-          <ListItemText primary="Inbox" />
-        </ListItem>
-        <ListItem button key="mail">
-          <ListItemText primary="Mail" />
-        </ListItem>
-        <ListItem button key="settings">
-          <ListItemText primary="Settings" />
+        <ListItem button key="linked-list">
+          <NavLink to="/linked-list" className="menuItem">
+            <ListItemText primary="Linked-list" />
+          </NavLink>
         </ListItem>
       </List>
     </Drawer>
