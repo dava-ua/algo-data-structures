@@ -20,7 +20,8 @@ const reverseLinkedList = function (linkedlist) {
 
 import { useState } from 'react';
 import styles from './styles';
-import { Button, ButtonGroup } from '@material-ui/core';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 /**
  * Definition for singly-linked list.
@@ -31,8 +32,6 @@ import { Button, ButtonGroup } from '@material-ui/core';
  */
 const ListNode = ({ val, onNodeRemove }) => {
   const classes = styles();
-  /*const [val, setVal] = useState(val);
-  const [next, setNext] = useState(next);*/
 
   return (
     <div className={classes.node} onClick={() => onNodeRemove(val)}>
@@ -126,11 +125,11 @@ export const ReverseLinkedList = () => {
 
   return (
     <>
-      <ButtonGroup spacing={2} direction="row">
+      <Stack spacing={2} direction="row">
         <Button variant="outlined" onClick={addNode}>Add node</Button>
         <Button variant="outlined" onClick={reverseList}>Reverse list</Button>
-      </ButtonGroup>
-      <div>{renderList().map(n => <ListNode onNodeRemove={removeNode} val={n} key={n}/>)}</div>
+      </Stack>
+      <Stack direction="row" spacing={2}>{renderList().map(n => <ListNode onNodeRemove={removeNode} val={n} key={n}/>)}</Stack>
     </>
   );
 };

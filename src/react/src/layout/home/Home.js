@@ -14,7 +14,7 @@ import { ReverseLinkedList } from '../../experiments/reverse-linked-list/Reverse
 
 const AdminPanel = () => {
   const classes = homeStyles();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <uiContext.Provider value={[open, setOpen]}>
