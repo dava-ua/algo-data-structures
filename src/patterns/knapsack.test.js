@@ -2,8 +2,8 @@
 // https://gist.github.com/lqt0223/21f033450a9d762ce8aee4da336363b1
 
 // O(n'2)
-const capacity = 5;
-const items = [[5, 2], [2, 3], [6, 5]];
+const CAPACITY = 5;
+const ITEMS = [[5, 2], [2, 3], [6, 5]];
 
 function knapsackProblem(items, capacity) {
   const maxTotals = [];
@@ -34,6 +34,6 @@ function knapsackProblem(items, capacity) {
 
 describe('Knapsack', () => {
   it('should return correct max fit', () => {
-    expect(knapsackProblem(items, capacity)).toEqual(7);
+    expect(knapsackProblem(ITEMS, CAPACITY)).toEqual(7);
   });
 });

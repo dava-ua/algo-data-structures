@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import TurnContext from './TurnContext';
 import styles from './styles';
+import { Paper } from '@mui/material';
 
 
 export const Cell = ({onCellMark, index}) => {
@@ -16,9 +17,10 @@ export const Cell = ({onCellMark, index}) => {
   }
 
   return (
-    <div
+    <Paper
+      elevation={3}
       className={classes.cell}
       style={{ background: state != null ? (state ? 'green' : 'red') : '' }}
-      onClick={markCell}> </div>
+      onClick={markCell}> </Paper>
   );
 };

@@ -7,8 +7,8 @@ export default makeStyles((theme) =>
     cell: {
       width: CELL_SIZE,
       height: CELL_SIZE,
-      border: '1px solid',
-      float: 'left'
+      float: 'left',
+      margin: 3
     },
   }),
 );

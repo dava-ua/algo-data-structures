@@ -49,6 +49,11 @@ const SideMenu = () => {
             <ListItemText primary="Linked-list" />
           </NavLink>
         </ListItem>
+        <ListItem button key="knapsack-problem">
+          <NavLink to="/knapsack-problem" className="menuItem">
+            <ListItemText primary="Knapsack-problem" />
+          </NavLink>
+        </ListItem>
       </List>
     </Drawer>
   );

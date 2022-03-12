@@ -11,6 +11,7 @@ import SideMenu from '../../components/SideMenu/SideMenu';
 import PageNotFound from '../PageNotFound';
 import TicTacToe from '../../experiments/tic-tac-toe/TicTacToe';
 import { ReverseLinkedList } from '../../experiments/reverse-linked-list/ReverseLinkedList';
+import { KnapsackProblem } from '../../experiments/knapsack-problem/KnapsackProblem';
 
 const AdminPanel = () => {
   const classes = homeStyles();
@@ -28,6 +29,7 @@ const AdminPanel = () => {
               <Routes>
                 <Route path="/tic-tac-toe" element={<TicTacToe />} />
                 <Route path="/linked-list" element={<ReverseLinkedList />} />
+                <Route path="/knapsack-problem" element={<KnapsackProblem />} />
                 <Route path="/404" element={<PageNotFound />} />
               </Routes>
             </main>

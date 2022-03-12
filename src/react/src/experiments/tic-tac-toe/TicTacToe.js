@@ -1,6 +1,7 @@
 import { Cell } from './Cell';
 import { useState } from 'react';
 import TurnContext from './TurnContext';
+import Button from '@mui/material/Button';
 
 function TicTacToe() {
 
@@ -48,9 +49,9 @@ function TicTacToe() {
 
   return (
     <TurnContext.Provider value={value}>
-      <button onClick={() => resetBoard()}>
+      <Button variant="outlined" onClick={() => resetBoard()}>
         Reset Board
-      </button>
+      </Button>
       <h2>{status}</h2>
       {reset && <div className="board">
         <Cell onCellMark={onCellMarkedCallback} index={0}></Cell>

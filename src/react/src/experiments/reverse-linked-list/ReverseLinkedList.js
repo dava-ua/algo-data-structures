@@ -1,23 +1,3 @@
-// Iterative Solution
-// O(n) time & O(1) space
-/*
-const reverseLinkedList = function (linkedlist) {
-  let node = linkedlist;
-  let previous = null;
-
-  while (node) {
-    // save next or you lose it!!!
-    const save = node.next; // 2
-    // reverse pointer
-    node.next = previous; // null
-    // increment previous to current node
-    previous = node; // 1
-    // increment node to next node or null at end of list
-    node = save; // 2
-  }
-  return previous; // Change the list head !!!
-};*/
-
 import { useState } from 'react';
 import styles from './styles';
 import Button from '@mui/material/Button';
