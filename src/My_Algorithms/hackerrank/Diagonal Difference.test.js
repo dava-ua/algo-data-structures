@@ -15,9 +15,18 @@ function diagonalDifference_initial(arr) {
 }
 
 // enhanced solution
-function diagonalDifference(arr) {
+function diagonalDifference_second(arr) {
   return Math.abs(
     arr.map((row, idx) => row[idx] - row[row.length - idx - 1]).reduce((a, b) => a + b, 0),
+  );
+}
+
+function diagonalDifference(arr) {
+  return Math.abs(
+    arr.reduce(
+      (prev, currentRow, idx) => prev + currentRow[idx] - currentRow[currentRow.length - idx - 1],
+      0,
+    ),
   );
 }
 
