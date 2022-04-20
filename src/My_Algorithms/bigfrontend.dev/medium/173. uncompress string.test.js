@@ -67,10 +67,10 @@ function uncompress_stack(str) {
 }
 
 test('uncompress_stack', () => {
-  // expect(uncompress_stack('BFE')).toBe('BFE');
-  // expect(uncompress_stack('2(BFE)3(dev)')).toBe('BFEBFEdevdevdev');
-  // expect(uncompress_stack('2(BFE1(dev))3(2(lover))')).toBe('BFEdevBFEdevloverloverloverloverloverlover');
-  // expect(uncompress_stack('3(ab)')).toBe('ababab');
-  // expect(uncompress_stack('3(ab2(c))')).toBe('abccabccabcc');
+  expect(uncompress_stack('BFE')).toBe('BFE');
+  expect(uncompress_stack('2(BFE)3(dev)')).toBe('BFEBFEdevdevdev');
+  expect(uncompress_stack('2(BFE1(dev))3(2(lover))')).toBe('BFEdevBFEdevloverloverloverloverloverlover');
+  expect(uncompress_stack('3(ab)')).toBe('ababab');
+  expect(uncompress_stack('3(ab2(c))')).toBe('abccabccabcc');
   expect(uncompress_stack('2(ff3(ab2(c)))')).toBe('ffabccabccabccffabccabccabcc');
 });
