@@ -12,20 +12,17 @@
 function makingAnagrams(s1, s2) {
   const map = {};
   let occur = 0;
-  for (let l = 0; l < s1.length; l += 1) {
-    if (!map[s1[l]]) {
-      map[s1[l]] = 1;
-    } else {
-      map[s1[l]] += 1;
-    }
+
+  for (const l of s1) {
+    map[l] = map[l] ? map[l] += 1 : 1;
   }
 
-  for (let l = 0; l < s2.length; l += 1) {
-    if (map[s2[l]]) {
-      map[s2[l]] -= 1;
+  for (const l of s2) {
+    if (map[l]) {
+      map[l] -= 1;
       occur += 2;
-      if (map[s2[l]] === 0) {
-        delete map[s2[l]];
+      if (map[l] === 0) {
+        delete map[l];
       }
     }
   }
