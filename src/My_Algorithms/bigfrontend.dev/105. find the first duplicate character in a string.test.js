@@ -15,7 +15,7 @@ function firstDuplicate(str) {
   return null;
 }
 
-test('findTwo', () => {
+test('firstDuplicate', () => {
   expect(firstDuplicate('abachr')).toBe('a');
   expect(firstDuplicate('abca')).toBe('a');
   expect(firstDuplicate('abcdefe')).toBe('e');
