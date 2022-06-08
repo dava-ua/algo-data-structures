@@ -11,4 +11,4 @@ const myNew = (constructor, ...args) => {
   const obj = constructor.apply(that, args);
 
   return (obj && typeof obj === 'object') ? obj : that;
-}
+};
