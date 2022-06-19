@@ -6,8 +6,8 @@
  * @return {number}
  */
 function elementBefore(arr, target) {
-  let left = 0; let
-    right = arr.length - 1;
+  let left = 0;
+  let right = arr.length - 1;
 
   while (left < right) {
     const mid = left + right >> 1;
