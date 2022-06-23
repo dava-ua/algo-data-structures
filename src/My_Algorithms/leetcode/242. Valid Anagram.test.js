@@ -9,11 +9,7 @@ const isAnagram = function (s, t) {
   if (s.length !== t.length) return false;
   const store = new Map();
   for (let i = 0; i < s.length; i += 1) {
-    if (!store.has(s[i])) {
-      store.set(s[i], 1);
-    } else {
-      store.set(s[i], store.get(s[i]) + 1);
-    }
+    store.set(s[i], store.has(s[i]) ? (store.get(s[i]) + 1) : 1);
   }
 
   for (let i = 0; i < t.length; i += 1) {

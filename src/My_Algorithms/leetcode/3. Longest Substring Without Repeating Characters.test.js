@@ -56,7 +56,7 @@ const lengthOfLongestSubstring = (s) => {
   // keeps track of the maximum substring length.
   let maxLen = 0;
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i += 1) {
     // if the current char was seen, move the start to (1 + the last index of this char)
     // max prevents moving backward, 'start' can only move forward
     if (seen.has(s[i])) start = Math.max(seen.get(s[i]) + 1, start);
