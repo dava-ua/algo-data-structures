@@ -1,16 +1,16 @@
-# ReactJS admin frontend project for Cosuno code challenge
+# ReactJS experiments project
 
 1. Installation
 
    ```bash
    npm i
    ```
-   
+
 2. Running the app
 
    ```bash
    $ npm start
-   
+
    # open http://localhost:3000/
    ```
 
