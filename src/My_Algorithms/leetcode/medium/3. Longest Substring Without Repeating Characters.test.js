@@ -68,6 +68,26 @@ const lengthOfLongestSubstring = (s) => {
   return maxLen;
 };
 
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/2694302/js-98-sliding-window-with-exlanation/?orderBy=most_votes&languageTags=javascript
+const lengthOfLongestSubstring_sliding_window = (s) => {
+  const set = new Set();
+  let left = 0;
+  let maxSize = 0;
+
+  if (s.length === 0) return 0;
+  if (s.length === 1) return 1;
+
+  for (let i = 0; i < s.length; i += 1) {
+    while (set.has(s[i])) {
+      set.delete(s[left]);
+      left += 1;
+    }
+    set.add(s[i]);
+    maxSize = Math.max(maxSize, i - left + 1);
+  }
+  return maxSize;
+};
+
 test('lengthOfLongestSubstring', () => {
   expect(lengthOfLongestSubstring(' ')).toBe(1);
   expect(lengthOfLongestSubstring('aab')).toBe(2);
