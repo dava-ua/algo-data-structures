@@ -14,7 +14,9 @@ const minSubArrayLen = function (s, nums) {
 
     while (sum >= s) {
       const len = right - left + 1;
-      if (result === 0 || len < result) result = len;
+      if (result === 0 || len < result) {
+        result = len;
+      }
       sum -= nums[left];
       left += 1;
     }
