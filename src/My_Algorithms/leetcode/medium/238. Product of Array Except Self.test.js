@@ -32,11 +32,11 @@ const productExceptSelf_1 = function (nums) {
   while (start < nums.length && end >= 0) {
     prefixProduct[start] = prefixProduct[start - 1] * nums[start - 1];
     suffixProduct[end] = suffixProduct[end + 1] * nums[end + 1];
-    start++;
-    end--;
+    start += 1;
+    end -= 1;
   }
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i += 1) {
     nums[i] = prefixProduct[i] * suffixProduct[i];
   }
 
