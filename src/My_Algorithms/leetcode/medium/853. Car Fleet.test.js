@@ -56,7 +56,15 @@ const carFleet = function (target, position, speed) {
   return stack.length;
 };
 
-test('dailyTemperatures', () => {
+// [6, 2, 17],
+// [3, 9, 2]
+// tuples const f = [[6, 4.66], [2, 2], [17, 1.5]];
+// sorted: const g = [[2, 2], [6, 4.66], [17, 1.5]];
+
+// [1,2,3]
+// [1,2,3]
+//  tuples [[1, 9], [2, 4], [3, 2.3]];
+test('carFleet', () => {
   expect(carFleet(20, [6, 2, 17], [3, 9, 2])).toBe(2);
   expect(carFleet(12, [10, 8, 0, 5, 3], [2, 4, 1, 1, 3])).toBe(3);
   expect(carFleet(10, [8, 3, 7, 4, 6, 5], [4, 4, 4, 4, 4, 4])).toBe(6);
