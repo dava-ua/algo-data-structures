@@ -12,6 +12,7 @@ const search = function (nums, target) {
   let endIndex = nums.length - 1;
 
   while (startIndex <= endIndex) {
+    // const mid = left + ((right - left) >> 1);
     const middle = startIndex + Math.floor((endIndex - startIndex) / 2);
     if (nums[middle] === target) {
       return middle;
