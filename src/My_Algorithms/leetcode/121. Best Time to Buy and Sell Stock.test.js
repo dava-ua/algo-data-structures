@@ -5,7 +5,7 @@
  * @return {number}
  */
 // my initial solution
-const maxProfit = function (prices) {
+const maxProfit_my = function (prices) {
   let profit = 0;
   let min = prices[0];
   let max = 0;
@@ -41,8 +41,25 @@ const maxProfitA = function (prices) {
   return maxP;
 };
 
+const maxProfitB = function (prices) {
+  let left = 0; // Buy
+  let right = 1; // sell
+  let maxProfit = 0;
+  while (right < prices.length) {
+    if (prices[left] < prices[right]) {
+      const profit = prices[right] - prices[left]; // our current profit
+
+      maxProfit = Math.max(maxProfit, profit);
+    } else {
+      left = right;
+    }
+    right += 1;
+  }
+  return maxProfit;
+};
+
 test('maxProfit', () => {
-  expect(maxProfit([7, 1, 5, 3, 6, 4])).toBe(5);
-  expect(maxProfit([7, 6, 4, 3, 1])).toBe(0);
-  expect(maxProfit([3, 2, 6, 5, 0, 3])).toBe(4);
+  expect(maxProfitB([7, 1, 5, 3, 6, 4])).toBe(5);
+  expect(maxProfitB([7, 6, 4, 3, 1])).toBe(0);
+  expect(maxProfitB([3, 2, 6, 5, 0, 3])).toBe(4);
 });

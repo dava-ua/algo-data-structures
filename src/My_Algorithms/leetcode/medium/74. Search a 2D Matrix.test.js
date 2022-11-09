@@ -11,7 +11,9 @@ const binarySearch = function (nums, target) {
     const middle = startIndex + Math.floor((endIndex - startIndex) / 2);
     if (nums[middle] === target) {
       return true;
-    } if (nums[middle] > target) {
+    }
+
+    if (nums[middle] > target) {
       endIndex = middle - 1;
     } else {
       startIndex = middle + 1;
@@ -26,7 +28,7 @@ const binarySearch = function (nums, target) {
  * @return {boolean}
  */
 const searchMatrix_my = function (matrix, target) {
-  let firstRow = 0;
+  const firstRow = 0;
   let lastRow = matrix.length - 1;
 
   if (matrix.length === 1) return binarySearch(matrix[firstRow], target);
@@ -38,8 +40,6 @@ const searchMatrix_my = function (matrix, target) {
       lastRow = midRow - 1;
     } else if (matrix[midRow].at(-1) >= target) {
       return binarySearch(matrix[midRow], target);
-    } else {
-      firstRow = midRow + 1;
     }
 
     if (firstRow === lastRow) return binarySearch(matrix[firstRow], target);
@@ -91,9 +91,9 @@ const searchMatrix_leetcode2 = function (matrix, target) {
 };
 
 test('searchMatrix', () => {
-  expect(searchMatrix([[1]], 1)).toBeTruthy();
-  expect(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 20)).toBeTruthy();
-  expect(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 11)).toBeTruthy();
-  expect(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]], 3)).toBeTruthy();
-  expect(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]], 13)).toBeFalsy();
+  expect(searchMatrix_my([[1]], 1)).toBeTruthy();
+  expect(searchMatrix_my([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 20)).toBeTruthy();
+  expect(searchMatrix_my([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 11)).toBeTruthy();
+  expect(searchMatrix_my([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]], 3)).toBeTruthy();
+  expect(searchMatrix_my([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]], 13)).toBeFalsy();
 });
