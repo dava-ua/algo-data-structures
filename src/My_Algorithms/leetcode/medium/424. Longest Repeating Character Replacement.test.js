@@ -52,7 +52,7 @@ const characterReplacement = function (s, k) {
     while ((right - left + 1) - highestFrequency > k) {
       const leftCharacter = s.charAt(left);
       frequencies[leftCharacter] -= 1;
-      left++;
+      left += 1;
     }
 
     // Once we have a valid window, check if it's longer than the previous longest valid window,
@@ -60,7 +60,7 @@ const characterReplacement = function (s, k) {
     longest = Math.max(longest, right - left + 1);
 
     // Finally, increment the right pointer to shift the window to the right
-    right++;
+    right += 1;
   }
 
   // Return the longest valid window we've seen
