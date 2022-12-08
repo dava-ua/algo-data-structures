@@ -11,13 +11,11 @@ const MapSum = function () {
  */
 MapSum.prototype.insert = function (key, val) {
   let node = this.root;
-  for (let i = 0; i < key.length; i += 1) {
-    if (!node[key[i]]) node[key[i]] = {};
-    node = node[key[i]];
-    if (i === key.length - 1) {
-      node.val = val;
-    }
+  for (const c of key) {
+    if (!node[c]) node[c] = {};
+    node = node[c];
   }
+  node.val = val;
 };
 
 MapSum.prototype.traverse = function (word) {
@@ -36,6 +34,7 @@ MapSum.prototype.traverse = function (word) {
 MapSum.prototype.sum = function (prefix) {
   let sum = 0;
   const startNode = this.traverse(prefix);
+
   const calSum = (node) => {
     if (!node) return;
     if (node.val) sum += node.val;
@@ -45,6 +44,7 @@ MapSum.prototype.sum = function (prefix) {
       }
     }
   };
+
   calSum(startNode);
   return sum;
 };

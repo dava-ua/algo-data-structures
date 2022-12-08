@@ -12,7 +12,7 @@ class Trie {
       if (node[c] == null) node[c] = {};
       node = node[c];
     }
-    node.isWord = true;
+    node.endOfWord = true;
   }
 
   traverse(word) {
@@ -26,7 +26,7 @@ class Trie {
 
   search(word) {
     const node = this.traverse(word);
-    return node != null && node.isWord === true;
+    return node != null && node.endOfWord === true;
   }
 
   startsWith(prefix) {

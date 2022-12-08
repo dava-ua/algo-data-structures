@@ -49,6 +49,31 @@ const insert = function (intervals, newInterval) {
   return res;
 };
 
+// O(n), O(n)
+const insert_LC_solution = function (intervals, newInterval) {
+  let [start, end] = newInterval;
+  const left = [];
+  const right = [];
+
+  for (const interval of intervals) {
+    const [first, last] = interval;
+
+    // current interval is smaller than newInterval
+    if (last < start) left.push(interval);
+
+    // current interval is larger than newInterval
+    else if (first > end) right.push(interval);
+
+    // there is a overlap
+    else {
+      start = Math.min(start, first);
+      end = Math.max(end, last);
+    }
+  }
+
+  return [...left, [start, end], ...right];
+};
+
 test('insert', () => {
   expect(insert([], [5, 7])).toStrictEqual([[5, 7]]);
   expect(insert([[1, 5]], [2, 3])).toStrictEqual([[1, 5]]);
