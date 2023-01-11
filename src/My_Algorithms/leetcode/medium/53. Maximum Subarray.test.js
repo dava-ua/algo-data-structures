@@ -74,6 +74,20 @@ sub arrary traversing from left to right through the midpoint */
   }
 };
 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const maxSubArrayGreedy = (nums) => {
+  let max = -Infinity;
+  let prev = -Infinity;
+  for (const num of nums) {
+    prev = Math.max(prev + num, num);
+    max = Math.max(prev, max);
+  }
+  return max;
+};
+
 test('maxSubArray', () => {
   expect(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])).toBe(6);
   expect(maxSubArray([5, 4, -1, 7, 8])).toBe(23);
