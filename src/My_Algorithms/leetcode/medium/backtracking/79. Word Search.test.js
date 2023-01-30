@@ -34,3 +34,7 @@ const exist = function (board, word) {
 
   return false;
 };
+
+test('exist', () => {
+  expect(exist([['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']], 'ABCCED')).toBeTruthy();
+});
