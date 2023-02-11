@@ -1,5 +1,5 @@
 // https://bigfrontend.dev/problem/implement-Array-prototype.flat
-export const flat = (arr, depth = 1) => {
+const flat = (arr, depth = 1) => {
   if (!arr.length) { return []; }
   if (depth < 1) { return arr; }
 
