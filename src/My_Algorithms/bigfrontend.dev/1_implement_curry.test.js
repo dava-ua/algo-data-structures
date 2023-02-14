@@ -9,11 +9,8 @@ const curry1 = (fn) => {
 
 const curry = (fn) => {
   return function curryInner(...args) {
-    if (args.length >= fn.length) {
-    return fn.apply(this, args);
-  }
-  return curryInner.bind(this, ...args);
-    
+    if (args.length >= fn.length) return fn.apply(this, args);
+    return curryInner.bind(this, ...args);
   };
 };
 
