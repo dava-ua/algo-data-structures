@@ -13,6 +13,25 @@ function flattenThunk(thunk) {
   };
 }
 
+/**
+ * @param {Thunk} thunk
+ * @return {Thunk}
+ */
+function flattenThunk(thunk) {
+  return function(callback) {
+    const callbackWrapper = (err, data) => {
+      if(err) {
+        callback(err);
+      } else if (typeof data === 'function') {
+        data(callbackWrapper);
+      } else {
+       callback(err, data);
+      }
+    }
+    thunk(callbackWrapper);
+  }
+}
+
 const func1 = (cb) => {
   setTimeout(() => cb(null, 'ok'), 10);
 };
